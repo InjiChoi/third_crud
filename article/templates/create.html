@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+create
+<form action="{% url 'create_article' %}" method='POST'>
+    {% csrf_token %}
+    <label for="title">제목</label>
+    <input type="text" name='title'>
+    <br>
+    <label for="content">내용</label>
+    <textarea name="content" id="" cols="30" rows="10"></textarea>
+    <button type='submit'>저장하기</button>
+</form>
+<a href="{% url 'index' %}">목록</a>
+{% endblock content %}
